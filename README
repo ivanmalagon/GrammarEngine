@@ -5,3 +5,8 @@ A TDD practice for building a context-free grammar engine.
 
 Written in Javascript.
 Using Jasmine as test framework.
+
+Watch spec/Spec.js for the tests.
+
+Used for creating the 'Craftsman bio generator'
+http://www.hacheka.com/craftsman-bio-generator/
