@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Jasmine Test Runner</title>
+
+	<!-- Jasmine includes -->
+	<link rel="stylesheet" type="text/css" href="lib/jasmine.css">
+	<script type="text/javascript" src="lib/jasmine.js"></script>
+	<script type="text/javascript" src="lib/jasmine-html.js"></script>
+
+	<!-- Source files -->
+	<script type="text/javascript" src="src/inherit.js"></script>
+	<script type="text/javascript" src="src/PhraseValidator.js"></script>
+	<script type="text/javascript" src="src/Grammar.js"></script>
+	<script type="text/javascript" src="src/Rewriter.js"></script>
+	<script type="text/javascript" src="src/parser.js"></script>
+	<script type="text/javascript" src="src/token.js"></script>
+
+	<!-- Spec files -->
+	<script type="text/javascript" src="spec/Spec.js"></script>
+
+</head>
+
+<body>
+<script type="text/javascript">
+	jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+	jasmine.getEnv().execute();
+	
+</script>
+</body>
+</html>
