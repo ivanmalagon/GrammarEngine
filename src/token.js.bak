@@ -43,7 +43,7 @@ function NonTerminal(text)
 NonTerminal.prototype.Substitute = function(grammar)
 {
 	var tokenSubstitution = this.GetRandomSubstitution(grammar);
-	new TokensChecker().CheckForRecursivity(new Parser().Tokenize(tokenSubstitution), this);
+	new TokensChecker.CheckForRecursivity(new Parser().Tokenize(tokenSubstitution), this);
 	return tokenSubstitution;
 }
 

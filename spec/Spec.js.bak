@@ -81,7 +81,7 @@ describe ("Phrases validation", function() {
 	{	
 		try
 		{
-			var tokens = GetTokens("Hey! Acci>");
+		var parser = GetTokens("Hey! Acci>");
 			throw "Fail";
 		}
 		catch (error)
@@ -90,31 +90,18 @@ describe ("Phrases validation", function() {
 		}
 	});	
 	
-	it ("Nested tags not allowed", function()
+	it ("Anidated tags not allowed", function()
 	{	
 		try
 		{
-			var tokens = GetTokens("Hey! <Acci<Verbo raro> on>");
+			var parser = GetTokens("Hey! <Acci<Verbo raro> on>");
 			throw "Fail";
 		}
 		catch (error)
 		{
 			expect(error).toEqual("Nesting for delimiters is not allowed.");	
 		}
-	});
-	
-	it ("Empty non-terminals not allowed", function()
-	{
-		try
-		{
-			var tokens = GetTokens("Hola <> ¿Como va?");
-			throw "Fail";
-		}
-		catch (error)
-		{
-			expect(error).toEqual("Empty non-terminals not allowed.");	
-		}
-	});
+	});	
 });
 
 describe ("NonTerminal substitution", function() {

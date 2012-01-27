@@ -73,7 +73,7 @@ Parser.prototype.CleanSlices = function(slices)
 	for (var i = 0; i < slices.length; i++)
 	{
 		if (slices[i])
-			cleanSlices.push(slices[i]);	
+		cleanSlices.push(slices[i]);	
 	}
 	
 	return cleanSlices;

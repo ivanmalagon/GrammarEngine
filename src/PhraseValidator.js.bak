@@ -30,9 +30,3 @@ PhraseValidator.prototype.CheckForChar = function(modelChar, actualChar, openSta
 	else
 		return openStatus;
 }
-
-PhraseValidator.prototype.CheckForEmptyTags = function(phrase)
-{
-	if (phrase.indexOf("<>") > -1)
-		throw "Empty non-terminals not allowed.";
-}
