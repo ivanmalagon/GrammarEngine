@@ -31,24 +31,28 @@ Parser.prototype.ExtractTokenStrings = function(phrase)
 	
 	for (var i = 0; i < phrase.length; i++)
 	{
-		if (phrase[i] == "<")
-		{
-			slices.push(text);
-			text = "<";
-		}
-		else if (phrase[i] == ">")
-		{
-			text += ">";
-			slices.push(text);
-			text = "";	
-		}
-		else
-			text += phrase[i];
+		text = this.CharTreatment(phrase[i], slices, text);
 	}
 	
 	slices.push(text);
 	
 	return this.CleanSlices(slices);
+}
+
+Parser.prototype.CharTreatment = function(character, slices, text)
+{
+	if (character == "<")
+	{
+		slices.push(text);
+		return "<";
+	}
+	else if (character == ">")
+	{
+		slices.push(text + ">");
+		return "";
+	}
+	
+	return text + character;
 }
 
 Parser.prototype.StringsToTokens = function(tokensText)
